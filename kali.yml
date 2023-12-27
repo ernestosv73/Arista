@@ -1,0 +1,10 @@
+name: kali
+
+topology:
+  nodes:
+        
+    PC1:
+      kind: linux
+      image: docker.io/kalilinux/kali-rolling
+       
+    
