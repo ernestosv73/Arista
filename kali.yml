@@ -5,6 +5,6 @@ topology:
         
     PC1:
       kind: linux
-      image: kalifull
+      image: docker.io/kalilinux/kali-rolling
        
     
