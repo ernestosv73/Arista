@@ -6,5 +6,10 @@ topology:
     PC1:
       kind: linux
       image: esanchezv/kaliipv6v2.1:latest
-       
+
+    PC2:
+      kind: linux
+      image: esanchezv/kaliipv6v2.1:latest  
+  links:
+   - endpoints: ["PC1:eth1", "PC2:eth1"]     
     
