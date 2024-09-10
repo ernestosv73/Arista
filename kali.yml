@@ -7,9 +7,10 @@ topology:
       kind: linux
       image: esanchezv/kaliipv6v2.1:latest
 
-    PC2:
-      kind: linux
-      image: esanchezv/kaliipv6v2.1:latest  
+    sros:
+      kind: nokia_sros
+      image: h4ndzdatm0ld/sros:21.2.R1
+      type: sr-1
   links:
-   - endpoints: ["PC1:eth1", "PC2:eth1"]     
+   - endpoints: ["PC1:eth1", "sros:eth1"]     
     
