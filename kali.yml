@@ -11,6 +11,8 @@ topology:
       kind: nokia_sros
       image: h4ndzdatm0ld/sros:21.2.R1
       type: sr-1
+      binds:
+        - sros.cfg:/tftpboot/sros.cfg
   links:
    - endpoints: ["PC1:eth1", "sros:eth1"]     
     
