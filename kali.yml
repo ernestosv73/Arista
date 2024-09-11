@@ -6,6 +6,8 @@ topology:
     PC1:
       kind: linux
       image: esanchezv/kaliipv6v2.1:latest
+      exec: 
+       - ip addr add 192.168.1.10/24 dev eth1
 
     sros:
       kind: nokia_sros
