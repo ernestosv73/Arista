@@ -9,11 +9,11 @@ topology:
       exec: 
        - ip addr add 192.168.1.10/24 dev eth1
 
-    sros:
-      kind: nokia_sros
-      image: h4ndzdatm0ld/sros:21.2.R1
-      type: sr-1
+    vr-csr:
+      kind: cisco_csr1000v
+      image: h4ndzdatm0ld/csr1000v:16.07.03
+      
       
   links:
-   - endpoints: ["PC1:eth1", "sros:eth1"]     
+   - endpoints: ["PC1:eth1", "vr-csr:eth1"]     
     
