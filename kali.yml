@@ -5,15 +5,11 @@ topology:
         
     PC1:
       kind: linux
-      image: esanchezv/kaliipv6v2.1:latest
-      exec: 
-       - ip addr add 192.168.1.10/24 dev eth1
-
-    vr-csr:
-      kind: cisco_csr1000v
-      image: h4ndzdatm0ld/csr1000v:16.07.03
-      
+      image: kalilinux/kali-rolling:latest 
+    PC2:
+      kind: linux
+      image: kalilinux/kali-rolling:latest  
       
   links:
-   - endpoints: ["PC1:eth1", "vr-csr:eth1"]     
+   - endpoints: ["PC1:eth1", "PC2:eth1"]     
     
