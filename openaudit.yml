@@ -1,14 +1,14 @@
-name: kali
+name: openaudit
 
 topology:
   nodes:
         
     PC1:
       kind: linux
-      image: kalilinux/kali-rolling:latest 
+      image: sinuhenavarro/openaudit:latest 
     PC2:
       kind: linux
-      image: kalilinux/kali-rolling:latest  
+      image: esanchezv/kaliipv6v2.2:latest  
       
   links:
    - endpoints: ["PC1:eth1", "PC2:eth1"]     
