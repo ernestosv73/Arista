@@ -9,9 +9,13 @@ topology:
       ports:
         - 80:80
         - 443:443
+      exec:
+       - ip addr add 192.168.2.100/24 dev eth1  
     PC2:
       kind: linux
       image: esanchezv/kaliipv6v2.2:latest  
+      exec:
+       - ip addr add 192.168.2.101/24 dev eth1  
       
   links:
    - endpoints: ["PC1:eth1", "PC2:eth1"]     
