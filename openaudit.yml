@@ -6,6 +6,8 @@ topology:
     PC1:
       kind: linux
       image: sinuhenavarro/openaudit:latest 
+      ports:
+        - 80:80
     PC2:
       kind: linux
       image: esanchezv/kaliipv6v2.2:latest  
