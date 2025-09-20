@@ -2,7 +2,13 @@ name: openaudit
 
 topology:
   nodes:
-        
+
+    rlswitch:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixr-d3
+      startup-config: configs/srlswitch.cfg    
+    
     PC1:
       kind: linux
       image: sinuhenavarro/openaudit:latest 
