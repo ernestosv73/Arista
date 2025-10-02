@@ -1,0 +1,23 @@
+name: ceos
+topology:
+  nodes:
+
+    srlrouter:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixrd3
+      #startup-config: configs/srlswitch.cfg    
+
+    ceos:
+      kind: arista_ceos
+      image: ceos:4.34.3 
+    
+    PC1:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6:latest
+      
+      
+  links:
+   - endpoints: ["srlrouter:e1-1", "ceos:eth1"]   
+   - endpoints: ["ceos:eth2", "PC1:eth1"]   
+    
