@@ -6,7 +6,7 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
       type: ixrd3
-      #startup-config: configs/srlswitch.cfg    
+      #startup-config: configs/srlrouter.cfg    
 
     ceos:
       kind: arista_ceos
