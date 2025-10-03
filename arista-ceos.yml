@@ -12,6 +12,27 @@ topology:
       kind: arista_ceos
       image: ceos:4.34.3 
       startup-config: configs/myconfig.conf
+
+    gNMIc:
+      kind: linux
+      labels:
+        graph-icon: host
+      image: esanchezv/hellt-gnmic:latest
+      binds:
+        - configs/python_scapy.sh:/root/python_scapy.sh
+        - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
+        #- configs/gnmic/gnmic-config-acl.yml:/gnmic-config-acl.yml:ro
+        #- configs/icmpv6_capturav2.py:/root/icmpv6_capturav2.py
+        #- configs/icmpv6_capturav3.py:/root/icmpv6_capturav3.py
+        #- configs/supervisord.conf:/root/supervisord.conf
+        #- configs/sync_bindings.py:/root/sync_bindings.py
+        
+      exec:
+         - mkdir /data
+         - chmod +x /data
+         #- touch /data/mac_ipv6_bindings_dynamic.json
+         - chmod +x /root/python_scapy.sh
+         - bash /root/python_scapy.sh      
     
     PC1:
       kind: linux
@@ -41,9 +62,10 @@ topology:
         - ip -6 route del default dev eth0    
       
   links:
-   - endpoints: ["srlrouter:e1-1", "ceos:eth1"]   
-   - endpoints: ["ceos:eth2", "PC1:eth1"]   
-   - endpoints: ["ceos:eth3", "PC2:eth1"]   
-   - endpoints: ["ceos:eth4", "PC3:eth1"]   
-   - endpoints: ["ceos:eth5", "PC4:eth1"]   
+   - endpoints: ["srlrouter:e1-1", "ceos:eth1"]  
+   - endpoints: ["ceos:eth2", "gNMIc:eth1"] 
+   - endpoints: ["ceos:eth3", "PC1:eth1"]   
+   - endpoints: ["ceos:eth4", "PC2:eth1"]   
+   - endpoints: ["ceos:eth5", "PC3:eth1"]   
+   - endpoints: ["ceos:eth6", "PC4:eth1"]   
     
