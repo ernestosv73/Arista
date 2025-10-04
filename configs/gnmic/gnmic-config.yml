@@ -1,6 +1,6 @@
 username: admin
 password: admin
-insecure: false
+insecure: true
 encoding: json_ietf
 timeout: 10s
 
@@ -12,8 +12,9 @@ subscriptions:
   eos-mac-table:
     mode: stream
     stream-mode: on-change
+    origin: eos_native
     paths:
-      - eos_native:/Smash/bridging/status/smashFdbStatus
+      - /Smash/bridging/status/smashFdbStatus
 
 outputs:
   file_output:
