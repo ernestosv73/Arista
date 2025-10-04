@@ -12,7 +12,7 @@ subscriptions:
   eos-mac-table:
     mode: stream
     stream-mode: on-change
-    origin: eos_native
+    origin: eos-native
     paths:
       - /Smash/bridging/status/smashFdbStatus
 
