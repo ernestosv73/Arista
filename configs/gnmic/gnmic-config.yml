@@ -14,7 +14,7 @@ subscriptions:
     mode: stream
     stream-mode: on-change
     paths:
-      - /network-instance[name=lanswitch]/bridge-table/mac-table/mac[address=*]
+      - eos_native:/Smash/bridging/status/smashFdbStatus
 
 outputs:
   file_output:
