@@ -9,7 +9,7 @@ targets:
     address: ceos:6030
 
 subscriptions:
-  srl-mac-table:
+  eos-mac-table:
     mode: stream
     stream-mode: on-change
     paths:
